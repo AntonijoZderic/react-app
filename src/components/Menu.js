@@ -6,6 +6,7 @@ import expandLessIcon from '../icons/expand_less.png'
 function Menu({type, getMenuOption}) {
   const [showMenu, setShowMenu] = useState(true);
   const selectedOption = useRef(type === "SORT" && 0);
+  const selectedClassName = type === "SORT" ? "selected unselectable" : "selected";
 
   function selectOption(o){
     selectedOption.current = o;
@@ -33,7 +34,7 @@ function Menu({type, getMenuOption}) {
   var menu = (
     <ul>
       {options.map((option, index) => (
-        <li className={selectedOption.current === index ? "selected" : undefined} onClick={() => optionOnClick(option, index)} key={index}>
+        <li className={selectedOption.current === index ? selectedClassName : undefined} onClick={() => optionOnClick(option, index)} key={index}>
           {type === "SORT" ? option : option.text}
           {selectedOption.current === index && <img src={checkMarkIcon} alt="check mark icon" />}
         </li>

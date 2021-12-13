@@ -1,3 +1,20 @@
+a:link, a:visited {
+  color: rgb(245, 245, 245);
+  text-decoration: none;
+}
+
+.align-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
   background-color: rgb(30, 30, 30);
   margin-bottom: 15px;
@@ -9,16 +26,16 @@
   transform: translateY(-3px);
 }
 
-.thumbnail {
-  width: 100px;
-}
-
 .details {
   flex: 1;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
   font-size: 11px;
+}
+
+.thumbnail {
+  width: 100px;
 }
 
 .title {
@@ -65,15 +82,10 @@ input:hover, input:focus {
   border-color: rgb(245, 245, 245);
 }
 
-a:link, a:visited {
-  color: rgb(245, 245, 245);
-  text-decoration: none;
-}
-
 .menus {
   display: none;
   background-color: rgb(21, 21, 21);
-  width: 225px;
+  width: 40%;
   height: 100vh;
   position: fixed;
   left: 0;
@@ -108,12 +120,6 @@ a:link, a:visited {
   top: 0;
 }
 
-.align-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .price-info {
   display: flex;
   align-items: center;
@@ -134,13 +140,14 @@ a:link, a:visited {
   background-color: rgb(50, 60, 70);
   width: 40px;
   height: 24px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
 }
 
 .menu {
   margin: 10px;
+}
+
+.menu h5 {
+  margin: 0;
 }
 
 ul {
@@ -151,10 +158,6 @@ ul {
 
 li, .menu h5 {
   opacity: 0.6;
-}
-
-.menu h5 {
-  margin: 0;
 }
 
 li:hover, .menu h5:hover, .icon-text:hover {
@@ -173,7 +176,39 @@ background-color: rgb(30, 30, 30);
   justify-content: space-between;
 }
 
+.unselectable:hover {
+  cursor: default;
+}
+
+.current-page {
+  background-color: rgb(50 50 50);
+  opacity: 1;
+}
+
+.current-page:hover {
+  cursor: default;
+  background-color: rgb(50 50 50);
+}
+
+.page-item:hover {
+  background-color: rgb(40 40 40);
+}
+
+.current-page, .page-item  {
+  float: left;
+  height: 30px;
+  width: 30px;
+}
+
 @media only screen and (min-width: 500px) {
+  .details {
+    font-size: 14px;
+  }
+
+  .menus {
+    width: 200px;
+  }
+
   .search-box {
     width: 300px;
   }
@@ -181,25 +216,31 @@ background-color: rgb(30, 30, 30);
   .thumbnail {
     width: 150px;
   }
-
-  .details {
-    font-size: 14px;
-  }
 }
 
 @media only screen and (min-width: 768px) {
-  .menus {
-    display: inline;
-    position: static;
-    width: 15%;
-    height: unset;
-  }
-
   .icon-text-container {
     display: none;
   }
   
+  .menus {
+    display: inline;
+    position: static;
+    width: 18%;
+    height: unset;
+  }
+  
   .search-results {
     width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .menus {
+    width: 180px;
+  }
+  
+  .search-results {
+    width: 720px;
   }
 }

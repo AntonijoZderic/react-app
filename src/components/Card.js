@@ -5,7 +5,7 @@ function Card({result}) {
       <div className="details">
         <p className="title">{result.title}</p>
         <div className="price-info">
-          <p className="discount">{Math.floor(result.savings)}%</p>
+          <p className="discount center">{Math.floor(result.savings)}%</p>
           <div className="prices">
             <p><small><del>€{result.normalPrice}</del></small></p>
             <p>€{result.salePrice}</p>

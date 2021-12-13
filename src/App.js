@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <>   
+    <>
       <Search getSearchTerm={(st) => setSearchTerm(st)} searchTerm={searchTerm}/>
       {apiData &&
       <div className="align-wrap">
